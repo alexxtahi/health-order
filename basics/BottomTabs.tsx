@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icons from './Icons';
-import ActusView from './views/ActusView';
-import HomeView from './views/HomeView';
-import ProfileView from './views/ProfileView';
-import SettingsView from './views/SettingsView';
+import ActusView from '../views/ActusView';
+import HomeView from '../views/HomeView';
+import ProfileView from '../views/ProfileView';
+import SettingsView from '../views/SettingsView';
+import { styles } from './Styles';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,6 +13,8 @@ export default function BottomTabs() {
         <Tab.Navigator screenOptions={{
             headerShown: false,
             tabBarActiveTintColor: "#16c2d5",
+            tabBarHideOnKeyboard: true,
+            tabBarStyle: styles.bottomTabs
         }}>
             <Tab.Screen name="Accueil" component={HomeView} options={{
                 tabBarIcon: ({ size, color }) => (<Icons framework={"Octicons"} name={"home"} color={color} size={size} />)

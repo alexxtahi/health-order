@@ -1,0 +1,12 @@
+{
+    "light": {
+        "statusbarContentColor": "dark",
+        "backgroundColor": "#fff",
+        "primaryColor": "#222"
+    },
+    "dark": {
+        "statusbarContentColor": "light",
+        "backgroundColor": "#222",
+        "primaryColor": "#fff"
+    }
+}
