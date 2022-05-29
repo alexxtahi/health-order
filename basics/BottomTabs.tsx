@@ -14,12 +14,13 @@ export default function BottomTabs() {
             headerShown: false,
             tabBarActiveTintColor: "#16c2d5",
             tabBarHideOnKeyboard: true,
-            tabBarStyle: styles.bottomTabs
+            tabBarStyle: styles().bottomTabs
         }}>
             <Tab.Screen name="Accueil" component={HomeView} options={{
                 tabBarIcon: ({ size, color }) => (<Icons framework={"Octicons"} name={"home"} color={color} size={size} />)
             }} />
             <Tab.Screen name="Actus" component={ActusView} options={{
+                tabBarBadge: '99+',
                 tabBarIcon: ({ size, color }) => (<Icons framework={"FontAwesome"} name={"newspaper-o"} color={color} size={size} />)
             }} />
             <Tab.Screen name="Profil" component={ProfileView} options={{
