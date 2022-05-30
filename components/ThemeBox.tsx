@@ -23,7 +23,6 @@ export default function ThemeBox() {
     // }
     // Propriétés
     const [themeSelected, setThemeSelected] = useState('light');
-    const appTheme = useTheme();
     // Rendu du composant
     var cards: any = [];
     THEMES.forEach(theme => {
@@ -34,8 +33,6 @@ export default function ThemeBox() {
                 onPress={() => {
                     // console.log("Selected theme: " + theme);
                     CacheManager.setItem('theme', theme);
-                    appTheme.dark = (theme === 'dark');
-                    console.log('[INFO] Theme set! -> (' + appTheme.dark + ')');
                     setThemeSelected(theme);
                 }}>
                 <ThemeCard theme={theme} isSelected={themeSelected === theme ? true : false} />

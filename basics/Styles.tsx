@@ -2,8 +2,6 @@ import { useTheme } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
 import { APP_THEME } from './constants';
 // Sélection du thème à appliquer
-export const colorScheme = APP_THEME === 'light' ? require('./ColorScheme.json').light : require('./ColorScheme.json').dark;
-
 export const styles = () => {
     const { colors } = useTheme();
     return StyleSheet.create({
@@ -20,34 +18,34 @@ export const styles = () => {
         },
         viewHeader: {
             width: '90%',
-            // backgroundColor: '#ddd',
+            // backgroundColor: colors.card,
         },
         viewBody: {
             width: '90%',
             marginTop: 50,
-            // backgroundColor: '#ddd',
+            // backgroundColor: colors.card,
         },
         viewHeaderTop: {
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'row',
-            // backgroundColor: '#ddd',
+            // backgroundColor: colors.card,
             alignItems: 'center',
         },
         viewTitle: {
             fontSize: 26,
             fontWeight: 'bold',
-            color: colorScheme.primaryColor,
+            color: colors.primary,
         },
         viewSubtitle: {
             fontSize: 16,
             marginTop: 10,
-            color: colorScheme.primaryColor,
+            color: colors.primary,
         },
         componentTitle: {
             fontSize: 20,
             fontWeight: 'bold',
-            color: colorScheme.primaryColor,
+            color: colors.primary,
             marginBottom: 15,
         },
         //! Components
@@ -55,7 +53,7 @@ export const styles = () => {
         mapPreview: {
             width: '100%',
             height: 150,
-            backgroundColor: '#ddd',
+            backgroundColor: colors.card,
             borderRadius: 30,
             marginBottom: 20,
         },
@@ -68,14 +66,53 @@ export const styles = () => {
             // backgroundColor: 'red',
         },
         drugsGridContent: {
-            alignSelf: 'center',
+            width: '100%',
+            alignItems: 'center',
+            // backgroundColor: 'red',
+        },
+        drugsList: {
+            width: '100%',
+            // marginBottom: 20,
+            // backgroundColor: 'red',
+        },
+        drugsListContent: {
+            width: '100%',
+            // backgroundColor: 'red',
         },
         drugCard: {
             width: 170,
             height: 170,
-            backgroundColor: '#ddd',
+            backgroundColor: colors.card,
             borderRadius: 30,
             margin: 10,
+        },
+        drugExtendedCardContainer: {
+            marginBottom: 20,
+
+        },
+        drugExtendedPagerView: {
+            width: '100%',
+            height: 250,
+            alignSelf: 'center',
+        },
+        drugExtendedCard: {
+            width: '90%',
+            backgroundColor: colors.card,
+            borderRadius: 30,
+            // alignSelf: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        drugExtendedCardIndicators: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+        },
+        indicatorDot: {
+            width: 10,
+            height: 10,
+            margin: 10,
+            borderRadius: 10,
         },
         // Theme
         themeBox: {
@@ -88,7 +125,7 @@ export const styles = () => {
         themeCard: {
             width: 175,
             height: 175,
-            backgroundColor: '#ddd',
+            backgroundColor: colors.card,
             borderRadius: 30,
             alignItems: 'center',
             justifyContent: 'center',
@@ -109,11 +146,12 @@ export const styles = () => {
         username: { // Le nom de l'utilisateur
             fontSize: 20,
             fontWeight: 'bold',
+            color: colors.primary,
         },
         walletBox: { // Le portefeuille de cartes d'assurance
             width: '90%',
             height: 200,
-            backgroundColor: '#ddd',
+            backgroundColor: colors.card,
             borderRadius: 30,
             marginBottom: 25,
         },
@@ -128,6 +166,7 @@ export const styles = () => {
             fontWeight: 'bold',
             textAlign: 'center',
             textDecorationLine: 'underline',
+            color: colors.primary,
         },
         //! SettingsView
     })
