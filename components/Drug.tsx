@@ -8,7 +8,7 @@ export default function Drug(props: any) {
     // Propriétés
     var style: any = styles();
     const { colors } = useTheme();
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
     // Rendu du composant
     return props.extended === false ? (
         <View style={style.drugCard}>
@@ -18,12 +18,13 @@ export default function Drug(props: any) {
             {/* Pager */}
             <PagerView
                 style={style.drugExtendedPagerView}
-                initialPage={0}
+                initialPage={currentPage}
                 pageMargin={15}
-                showPageIndicator={true}
-            // onPageSelected={(pageIndex) => {
-            //     console.log(pageIndex);
-            // }}
+                onPageSelected={(page) => {
+                    const pageIndex = page.nativeEvent.position;
+                    // console.log("[INFO] Page Target -> " + pageIndex);
+                    setCurrentPage(pageIndex);
+                }}
             >
                 {/* Première Page */}
                 <View key="1" style={style.drugExtendedCard}>
