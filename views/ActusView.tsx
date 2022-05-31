@@ -8,19 +8,21 @@ import DrugsList from '../components/DrugsList';
 import MapPreview from '../components/MapPreview';
 
 export default function ActusView() {
+    // Propriétés
+    var style: any = styles();
     // Rendu du composant
     return (
-        <SafeAreaView style={styles().container} >
+        <SafeAreaView style={style.container} >
             <StatusBar style="auto" />
             {/* Header */}
-            <View style={styles().viewHeader} >
-                <View style={styles().viewHeaderTop}>
-                    <Text style={styles().viewTitle}>Actualités</Text>
+            <View style={style.viewHeader} >
+                <View style={style.viewHeaderTop}>
+                    <Text style={style.viewTitle}>Actualités</Text>
                 </View>
-                <Text style={styles().viewSubtitle}>Vous trouverez ici les médicaments en rapport avec votre profil.</Text>
+                <Text style={style.viewSubtitle}>Vous trouverez ici les médicaments en rapport avec votre profil.</Text>
             </View>
             {/* Body */}
-            <View style={styles().viewBody} >
+            <View style={style.viewBody} >
                 {/* Liste de médicaments */}
                 < DrugsList />
             </View >

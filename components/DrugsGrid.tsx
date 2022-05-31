@@ -6,10 +6,12 @@ import Drug from './Drug';
 const drugList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 5, 5, 5, 66861, 641, 146, 5, 5];
 
 export default function DrugsGrid() {
+    // Propriétés
+    var style: any = styles();
     // Rendu du composant
     return (
         <View>
-            <Text style={styles().componentTitle}>Médicaments</Text>
+            <Text style={style.componentTitle}>Médicaments</Text>
             <FlatList
                 data={drugList}
                 keyExtractor={(item, index) => index.toString()}
@@ -29,9 +31,9 @@ export default function DrugsGrid() {
                 }}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
-                style={styles().drugsGrid}
+                style={style.drugsGrid}
                 numColumns={2}
-                contentContainerStyle={styles().drugsGridContent}
+                contentContainerStyle={style.drugsGridContent}
             />
         </View>
     );

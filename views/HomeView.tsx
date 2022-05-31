@@ -9,23 +9,24 @@ import { useTheme } from '@react-navigation/native';
 
 export default function HomeView() {
     // Propriétés
+    var style: any = styles();
     const { colors } = useTheme();
     // Rendu du composant
     return (
-        <SafeAreaView style={styles().container} >
+        <SafeAreaView style={style.container} >
             <StatusBar style="auto" />
             {/* Header */}
-            <View style={styles().viewHeader} >
-                <View style={styles().viewHeaderTop}>
-                    <Text style={styles().viewTitle}>Bonjour !</Text>
+            <View style={style.viewHeader} >
+                <View style={style.viewHeaderTop}>
+                    <Text style={style.viewTitle}>Bonjour !</Text>
                     <TouchableOpacity>
                         <Icons framework={"Feather"} name={"bell"} color={colors.primary} size={24} />
                     </TouchableOpacity>
                 </View>
-                <Text style={styles().viewSubtitle}>Bienvenue sur l'application d'achat de médicaments en ligne.</Text>
+                <Text style={style.viewSubtitle}>Bienvenue sur l'application d'achat de médicaments en ligne.</Text>
             </View>
             {/* Body */}
-            <View style={styles().viewBody} >
+            <View style={style.viewBody} >
                 {/* Carte */}
                 < MapPreview />
                 {/* Médicaments */}

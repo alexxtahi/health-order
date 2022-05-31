@@ -9,12 +9,15 @@ import { styles } from './Styles';
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
+    // Propriétés
+    var style: any = styles();
+    // Rendu du composant
     return (
         <Tab.Navigator screenOptions={{
             headerShown: false,
             tabBarActiveTintColor: "#16c2d5",
             tabBarHideOnKeyboard: true,
-            tabBarStyle: styles().bottomTabs
+            tabBarStyle: style.bottomTabs
         }}>
             <Tab.Screen name="Accueil" component={HomeView} options={{
                 tabBarIcon: ({ size, color }) => (<Icons framework={"Octicons"} name={"home"} color={color} size={size} />)

@@ -3,9 +3,15 @@ import { FlatList, ScrollView, Text, View } from 'react-native';
 import { styles } from '../basics/Styles';
 import Drug from './Drug';
 
-const drugList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 5, 5, 5, 66861, 641, 146, 5, 5];
+const drugList = [
+    '../assets/img/drugs/1.jpg',
+    '../assets/img/drugs/2.jpg',
+    '../assets/img/drugs/3.png',
+];
 
 export default function DrugsList() {
+    // Propriétés
+    var style: any = styles();
     // Rendu du composant
     return (
         <View>
@@ -14,11 +20,11 @@ export default function DrugsList() {
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item, index }) => {
                     if (index !== drugList.length - 1) {
-                        return (<Drug extended={true} />);
+                        return (<Drug extended={true} image={drugList[index]} />);
                     } else {
                         return (
                             <View>
-                                <Drug extended={true} />
+                                <Drug extended={true} image={drugList[index]} />
                                 {/* Créer un espace à la fin de la liste */}
                                 <View style={{ height: 20 }} />
                             </View>
@@ -28,9 +34,9 @@ export default function DrugsList() {
                 }}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
-                style={styles().drugsList}
+                style={style.drugsList}
                 numColumns={1}
-                contentContainerStyle={styles().drugsListContent}
+                contentContainerStyle={style.drugsListContent}
             />
         </View>
     );

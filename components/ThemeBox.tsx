@@ -8,12 +8,7 @@ import { styles } from '../basics/Styles';
 import ThemeCard from './ThemeCard';
 
 export default function ThemeBox() {
-    // constructor(props: any) {
-    //     super(props);
-    //     this.state = {
-    //         themeSelected: 'light',
-    //     }
-    // }
+
     // Récupérer le thème récent depuis le cache
     // componentDidMount() {
     //     CacheManager.getItem('theme').then(theme => {
@@ -22,6 +17,7 @@ export default function ThemeBox() {
     //     });
     // }
     // Propriétés
+    var style: any = styles();
     const [themeSelected, setThemeSelected] = useState('light');
     // Rendu du composant
     var cards: any = [];
@@ -41,7 +37,7 @@ export default function ThemeBox() {
     });
 
     return (
-        <View style={styles().themeBox}>
+        <View style={style.themeBox}>
             {cards}
         </View>
     );

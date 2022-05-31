@@ -88,7 +88,6 @@ export const styles = () => {
         },
         drugExtendedCardContainer: {
             marginBottom: 20,
-
         },
         drugExtendedPagerView: {
             width: '100%',
@@ -103,15 +102,35 @@ export const styles = () => {
             justifyContent: 'center',
             alignItems: 'center',
         },
+        drugExtendedImage: {
+            width: '100%',
+            height: '100%',
+            borderRadius: 30,
+        },
+        drugExtendedCardDescriptionBox: {
+            padding: 15,
+            // backgroundColor: '#f00',
+            justifyContent: 'space-between',
+        },
+        drugDescription: {
+            color: colors.text,
+        },
         drugExtendedCardIndicators: {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
         },
+        drugExtendedButtonBox: {
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+            // backgroundColor: '#f00',
+        },
         indicatorDot: {
             width: 10,
             height: 10,
-            margin: 10,
+            margin: 5,
             borderRadius: 10,
         },
         // Theme
@@ -129,6 +148,21 @@ export const styles = () => {
             borderRadius: 30,
             alignItems: 'center',
             justifyContent: 'center',
+        },
+        // CustomButton
+        customButton: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: colors.notification,
+            paddingVertical: 5,
+            paddingHorizontal: 15,
+            borderRadius: 30,
+            // width: 'min',
+        },
+        customButtonTitle: {
+            color: colors.background,
         },
         //! HomeView
 

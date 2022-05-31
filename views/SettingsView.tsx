@@ -6,18 +6,21 @@ import { styles } from '../basics/Styles';
 import ThemeBox from '../components/ThemeBox';
 
 export default function SettingsView() {
+    // Propriétés
+    var style: any = styles();
+    // Rendu du composant
     return (
-        <View style={styles().container}>
+        <View style={style.container}>
             <StatusBar style="auto" />
             {/* Header */}
-            <View style={styles().viewHeader}>
-                <View style={styles().viewHeaderTop}>
-                    <Text style={styles().viewTitle}>Réglages</Text>
+            <View style={style.viewHeader}>
+                <View style={style.viewHeaderTop}>
+                    <Text style={style.viewTitle}>Réglages</Text>
                 </View>
-                <Text style={styles().viewSubtitle}>Ajustez les réglages en fonction de votre utilisation.</Text>
+                <Text style={style.viewSubtitle}>Ajustez les réglages en fonction de votre utilisation.</Text>
             </View>
             {/* Body */}
-            <View style={styles().viewBody}>
+            <View style={style.viewBody}>
                 {/* Changement du thème */}
                 <ThemeBox />
             </View>

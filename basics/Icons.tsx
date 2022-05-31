@@ -6,19 +6,14 @@ import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import React from 'react';
 
-export default class Icons extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-    }
-    render() {
-        switch (this.props.framework) {
-            case 'FontAwesome': return <FontAwesome name={this.props.name} color={this.props.color} size={this.props.size} />;
-            case 'Ionicons': return <Ionicons name={this.props.name} color={this.props.color} size={this.props.size} />;
-            case 'Octicons': return <Octicons name={this.props.name} color={this.props.color} size={this.props.size} />;
-            case 'AntDesign': return <AntDesign name={this.props.name} color={this.props.color} size={this.props.size} />;
-            case 'Feather': return <Feather name={this.props.name} color={this.props.color} size={this.props.size} />;
-            case 'Fontisto': return <Fontisto name={this.props.name} color={this.props.color} size={this.props.size} />;
-            default: return <FontAwesome name={this.props.name} color={this.props.color} size={this.props.size} />;
-        }
+export default function Icons(props: any) {
+    switch (props.framework) {
+        case 'FontAwesome': return <FontAwesome name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
+        case 'Ionicons': return <Ionicons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
+        case 'Octicons': return <Octicons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
+        case 'AntDesign': return <AntDesign name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
+        case 'Feather': return <Feather name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
+        case 'Fontisto': return <Fontisto name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
+        default: return <FontAwesome name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
     }
 }
