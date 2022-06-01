@@ -4,9 +4,21 @@ import { styles } from '../basics/Styles';
 import Drug from './Drug';
 
 const drugList = [
-    '../assets/img/drugs/1.jpg',
-    '../assets/img/drugs/2.jpg',
-    '../assets/img/drugs/3.png',
+    {
+        name: 'Efferalgan 500mg',
+        usage: 'Contre les maux de tête, douleurs et fortes migraines.',
+        image: require('../assets/img/drugs/1.jpg'),
+    },
+    {
+        name: 'Doliprane 5mg',
+        usage: 'Contre les douleurs du corps et la fatigue excessive.',
+        image: require('../assets/img/drugs/2.jpg'),
+    },
+    {
+        name: 'CAC 1000',
+        usage: 'Contre les maux de tête, douleurs et fortes migraines',
+        image: require('../assets/img/drugs/3.png'),
+    },
 ];
 
 export default function DrugsList() {
@@ -20,13 +32,13 @@ export default function DrugsList() {
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item, index }) => {
                     if (index !== drugList.length - 1) {
-                        return (<Drug extended={true} image={drugList[index]} />);
+                        return (<Drug extended={true} name={drugList[index].name} usage={drugList[index].usage} image={drugList[index].image} />);
                     } else {
                         return (
                             <View>
-                                <Drug extended={true} image={drugList[index]} />
+                                <Drug extended={true} name={drugList[index].name} usage={drugList[index].usage} image={drugList[index].image} />
                                 {/* Créer un espace à la fin de la liste */}
-                                <View style={{ height: 20 }} />
+                                <View style={{ height: 100 }} />
                             </View>
                         );
 

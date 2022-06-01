@@ -1,6 +1,6 @@
 import { useTheme } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import PagerView from 'react-native-pager-view';
 import Icons from '../basics/Icons';
 import { styles } from '../basics/Styles';
@@ -14,8 +14,23 @@ export default function Drug(props: any) {
     const [currentPage, setCurrentPage] = useState(0);
     // Rendu du composant
     return props.extended === false ? (
-        <View style={style.drugCard}>
-        </View>
+        <TouchableOpacity>
+            <View style={style.drugCard}>
+                <ImageBackground imageStyle={{ borderRadius: 30 }} style={style.drugExtendedImage} source={props.image} >
+                    <LinearGradient
+                        colors={["rgba(0,0,0,0)", colors.card]}
+                        // start={[0, 0]}
+                        style={style.drugExtendedImageGradient}>
+                        <Text numberOfLines={2} style={style.drugTitle}>
+                            {props.name}
+                        </Text>
+                        <Text numberOfLines={2} style={style.drugSubtitle}>
+                            {props.usage}
+                        </Text>
+                    </LinearGradient>
+                </ImageBackground>
+            </View>
+        </TouchableOpacity>
     ) : (
         <View style={style.drugExtendedCardContainer}>
             {/* Pager */}
@@ -28,17 +43,28 @@ export default function Drug(props: any) {
                     setCurrentPage(pageIndex);
                 }}>
                 {/* Première Page */}
-                <View key="1" style={style.drugExtendedCard}>
-                    <LinearGradient
-                        colors={["#09203f", "#537895"]}
-                        start={[0.1, 0.1]}
-                    >
-                        <Text style={style.drugDescription} >Linear Gradient Example</Text>
-                    </LinearGradient>
-                    <Image style={style.drugExtendedImage} source={{ uri: "data:image/jpeg;base64,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YaBkoEPCMO32YIx/cF/MqYxgGgAHkKXtF4vURERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERF/9k=" }} />
-                </View>
+                <TouchableOpacity onPress={() => {
+                    console.log('Pressed drug ' + props.name);
+                }}>
+                    <View key="1" style={style.drugExtendedCard}>
+                        <ImageBackground imageStyle={{ borderRadius: 30 }} style={style.drugExtendedImage} source={props.image} >
+                            <LinearGradient
+                                colors={["rgba(0,0,0,0)", colors.card]}
+                                // start={[0, 0]}
+                                style={style.drugExtendedImageGradient}>
+                                <Text numberOfLines={2} style={style.drugTitle}>
+                                    {props.name}
+                                </Text>
+                                <Text numberOfLines={2} style={style.drugSubtitle}>
+                                    {props.usage}
+                                </Text>
+                            </LinearGradient>
+                        </ImageBackground>
+                    </View>
+                </TouchableOpacity>
                 {/* Deuxième Page */}
                 <View key="2" style={[style.drugExtendedCard, style.drugExtendedCardDescriptionBox]}>
+                    {/* Description du médicament */}
                     <Text numberOfLines={9} style={style.drugDescription}>
                         Ceci est la description du médicament présent sur la première page du widget.
                         Ceci est la description du médicament présent sur la première page du widget.
@@ -49,8 +75,8 @@ export default function Drug(props: any) {
                         Ceci est la description du médicament présent sur la première page du widget.
                         Ceci est la description du médicament présent sur la première page du widget.
                     </Text>
+                    {/* Bouton 'Lire plus' */}
                     <View style={style.drugExtendedButtonBox}>
-                        {/* <View> */}
                         <CustomButton title="Lire plus" onPress={() => {
                             console.log('CustomButton pressed');
                         }} suffixIcon={(

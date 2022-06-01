@@ -95,7 +95,7 @@ export const styles = () => {
             alignSelf: 'center',
         },
         drugExtendedCard: {
-            width: '90%',
+            width: '100%',
             backgroundColor: colors.card,
             borderRadius: 30,
             // alignSelf: 'center',
@@ -107,10 +107,27 @@ export const styles = () => {
             height: '100%',
             borderRadius: 30,
         },
+        drugExtendedImageGradient: {
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'flex-end',
+            padding: 15,
+            borderRadius: 29,
+        },
         drugExtendedCardDescriptionBox: {
             padding: 15,
             // backgroundColor: '#f00',
             justifyContent: 'space-between',
+        },
+        drugTitle: {
+            maxWidth: '70%',
+            color: colors.text,
+            fontWeight: 'bold',
+            fontSize: 24,
+        },
+        drugSubtitle: {
+            color: colors.text,
         },
         drugDescription: {
             color: colors.text,
