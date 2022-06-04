@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { useColorScheme } from 'react-native';
 import BottomTabs from './basics/BottomTabs';
+import 'react-native-gesture-handler';
 
 export default function App() {
   const userTheme = useColorScheme();
@@ -24,6 +25,8 @@ const theme = {
       text: '#222',
       border: '#ddd',
       notification: '#F7D2A5',
+      activeIcon: '#D5B792',
+      inactiveIcon: '#ccc',
     }
   },
   dark: {
@@ -35,6 +38,8 @@ const theme = {
       text: '#fff',
       border: '#ddd',
       notification: '#F7D2A5',
+      activeIcon: '#F7D2A5',
+      inactiveIcon: '#777',
     },
   }
 };

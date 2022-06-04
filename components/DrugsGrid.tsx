@@ -1,40 +1,47 @@
+import { useTheme } from '@react-navigation/native';
 import React from 'react';
-import { FlatList, ScrollView, Text, View } from 'react-native';
+import { FlatList, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { drugList } from '../basics/constants';
+import Icons from '../basics/Icons';
 import { styles } from '../basics/Styles';
 import Drug from './Drug';
+import SeeMoreCard from './SeeMoreCard';
 
-const drugList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 5, 5, 5, 66861, 641, 146, 5, 5];
 
 export default function DrugsGrid() {
     // Propriétés
+    const { colors } = useTheme();
     var style: any = styles();
+    // Génération des drugCards
+    const drugCards: JSX.Element[] = [];
+    drugList.slice(0, 9).forEach((drug, index) => {
+        drugCards.push(
+            <Drug extended={false} name={drug.name} usage={drug.usage} image={drug.image} />
+        );
+        // Afficher un élément de plus pour voir tout
+        if (index === 8) {
+            drugCards.push(
+                <SeeMoreCard onPress={() => {
+                    console.log('Voir tout')
+                }} />
+            );
+        }
+    });
+
     // Rendu du composant
     return (
         <View>
+            {/* Titre */}
             <Text style={style.componentTitle}>Médicaments</Text>
-            <FlatList
-                data={drugList}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item, index }) => {
-                    if (index !== drugList.length - 1) {
-                        return (<Drug extended={false} />);
-                    } else {
-                        return (
-                            <View>
-                                <Drug extended={false} />
-                                {/* Créer un espace à la fin de la liste */}
-                                <View style={{ height: 20 }} />
-                            </View>
-                        );
-
-                    }
-                }}
+            {/* Cartes */}
+            <ScrollView
+                style={style.drugsGridScrollView}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
-                style={style.drugsGrid}
-                numColumns={2}
-                contentContainerStyle={style.drugsGridContent}
-            />
+                contentContainerStyle={style.drugsGridScrollViewContent}
+            >
+                {drugCards}
+            </ScrollView>
         </View>
     );
 }

@@ -5,21 +5,25 @@ import HomeView from '../views/HomeView';
 import ProfileView from '../views/ProfileView';
 import SettingsView from '../views/SettingsView';
 import { styles } from './Styles';
+import { useTheme } from '@react-navigation/native';
+import { HomeStack } from './StackNavigator';
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
     // Propriétés
+    const { colors } = useTheme();
     var style: any = styles();
     // Rendu du composant
     return (
         <Tab.Navigator screenOptions={{
             headerShown: false,
-            tabBarActiveTintColor: "#16c2d5",
+            tabBarActiveTintColor: colors.activeIcon,
+            tabBarInactiveTintColor: colors.inactiveIcon,
             tabBarHideOnKeyboard: true,
             tabBarStyle: style.bottomTabs
         }}>
-            <Tab.Screen name="Accueil" component={HomeView} options={{
+            <Tab.Screen name="Accueil" component={HomeStack} options={{
                 tabBarIcon: ({ size, color }) => (<Icons framework={"Octicons"} name={"home"} color={color} size={size} />)
             }} />
             <Tab.Screen name="Actus" component={ActusView} options={{

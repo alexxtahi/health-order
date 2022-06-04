@@ -5,15 +5,30 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import React from 'react';
+import IconBadge from 'react-native-icon-badge';
+import { Text, View } from 'react-native';
+import { styles } from './Styles';
 
 export default function Icons(props: any) {
+    // Propriétés
+    var style: any = styles();
+    var icon: any = null;
     switch (props.framework) {
-        case 'FontAwesome': return <FontAwesome name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
-        case 'Ionicons': return <Ionicons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
-        case 'Octicons': return <Octicons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
-        case 'AntDesign': return <AntDesign name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
-        case 'Feather': return <Feather name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
-        case 'Fontisto': return <Fontisto name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
-        default: return <FontAwesome name={props.name} color={props.color} size={props.size} style={props.style ?? null} />;
+        case 'FontAwesome': icon = <FontAwesome name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'Ionicons': icon = <Ionicons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'Octicons': icon = <Octicons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'AntDesign': icon = <AntDesign name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'Feather': icon = <Feather name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'Fontisto': icon = <Fontisto name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        default: icon = <FontAwesome name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
     }
+    // Rendu du composant
+    return props.badge ? (
+        <View>
+            {/* Badge */}
+            <View style={style.iconBadge} />
+            {/* Icône */}
+            {icon}
+        </View>
+    ) : icon;
 }

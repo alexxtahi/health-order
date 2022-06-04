@@ -24,15 +24,12 @@ export default function Drug(props: any) {
                         <Text numberOfLines={2} style={style.drugTitle}>
                             {props.name}
                         </Text>
-                        <Text numberOfLines={2} style={style.drugSubtitle}>
-                            {props.usage}
-                        </Text>
                     </LinearGradient>
                 </ImageBackground>
             </View>
         </TouchableOpacity>
     ) : (
-        <View style={style.drugExtendedCardContainer}>
+        <View>
             {/* Pager */}
             <PagerView
                 style={style.drugExtendedPagerView}
@@ -52,10 +49,10 @@ export default function Drug(props: any) {
                                 colors={["rgba(0,0,0,0)", colors.card]}
                                 // start={[0, 0]}
                                 style={style.drugExtendedImageGradient}>
-                                <Text numberOfLines={2} style={style.drugTitle}>
+                                <Text numberOfLines={2} style={style.drugExtendedTitle}>
                                     {props.name}
                                 </Text>
-                                <Text numberOfLines={2} style={style.drugSubtitle}>
+                                <Text numberOfLines={2} style={style.drugExtendedSubtitle}>
                                     {props.usage}
                                 </Text>
                             </LinearGradient>
@@ -80,7 +77,7 @@ export default function Drug(props: any) {
                         <CustomButton title="Lire plus" onPress={() => {
                             console.log('CustomButton pressed');
                         }} suffixIcon={(
-                            <Icons framework="Feather" name="arrow-right-circle" color={colors.background} size={15} style={{ marginLeft: 5 }} />
+                            <Icons framework="Feather" name="arrow-right-circle" color="#222" size={15} style={{ marginLeft: 5 }} />
                         )} />
                     </View>
                 </View >
@@ -88,9 +85,9 @@ export default function Drug(props: any) {
             {/* Indicateurs */}
             <View style={style.drugExtendedCardIndicators}>
                 {/* Première Point */}
-                <View style={[style.indicatorDot, { backgroundColor: currentPage === 0 ? colors.notification : '#333' }]} />
+                <View style={[style.indicatorDot, { backgroundColor: currentPage === 0 ? colors.notification : colors.card }]} />
                 {/* Deuxième Point */}
-                <View style={[style.indicatorDot, { backgroundColor: currentPage === 1 ? colors.notification : '#333' }]} />
+                <View style={[style.indicatorDot, { backgroundColor: currentPage === 1 ? colors.notification : colors.card }]} />
             </View>
         </View>
     );

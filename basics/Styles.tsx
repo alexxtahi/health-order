@@ -32,6 +32,14 @@ export const styles = () => {
             // backgroundColor: colors.card,
             alignItems: 'center',
         },
+        viewHeaderBackButton: {
+            marginRight: 10,
+        },
+        viewTitleBoxWithBackBtn: {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+        },
         viewTitle: {
             fontSize: 26,
             fontWeight: 'bold',
@@ -65,10 +73,27 @@ export const styles = () => {
             // marginBottom: 20,
             // backgroundColor: 'red',
         },
-        drugsGridContent: {
+        drugsGridColumn: {
             width: '100%',
-            alignItems: 'center',
-            // backgroundColor: 'red',
+
+            // alignSelf: 'center',
+            // backgroundColor: 'green',
+            // display: 'flex',
+            // justifyContent: 'space-between',
+            // flexDirection: 'row',
+        },
+        drugsGridScrollView: {
+            // width: '100%',
+            height: 420,
+        },
+        drugsGridScrollViewContent: {
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            alignContent: 'center',
+            justifyContent: 'center',
+            paddingBottom: 15,
+            // backgroundColor: 'blue',
         },
         drugsList: {
             width: '100%',
@@ -80,14 +105,11 @@ export const styles = () => {
             // backgroundColor: 'red',
         },
         drugCard: {
-            width: 170,
-            height: 170,
+            width: 160,
+            height: 160,
             backgroundColor: colors.card,
+            margin: 12,
             borderRadius: 30,
-            margin: 10,
-        },
-        drugExtendedCardContainer: {
-            marginBottom: 20,
         },
         drugExtendedPagerView: {
             width: '100%',
@@ -121,12 +143,17 @@ export const styles = () => {
             justifyContent: 'space-between',
         },
         drugTitle: {
+            color: colors.text,
+            fontWeight: 'bold',
+            fontSize: 18,
+        },
+        drugExtendedTitle: {
             maxWidth: '70%',
             color: colors.text,
             fontWeight: 'bold',
             fontSize: 24,
         },
-        drugSubtitle: {
+        drugExtendedSubtitle: {
             color: colors.text,
         },
         drugDescription: {
@@ -176,10 +203,67 @@ export const styles = () => {
             paddingVertical: 5,
             paddingHorizontal: 15,
             borderRadius: 30,
-            // width: 'min',
         },
         customButtonTitle: {
-            color: colors.background,
+            color: "#222",
+        },
+        customIconButton: {
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: colors.card,
+            borderRadius: 20,
+        },
+        seeMoreCard: {
+            width: 160,
+            height: 160,
+            backgroundColor: colors.notification,
+            margin: 12,
+            borderRadius: 30,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        seeMoreText: {
+            color: "#222",
+            fontWeight: 'bold',
+            fontSize: 16,
+        },
+        // Notif
+        notifCard: {
+            width: '100%',
+            padding: 10,
+            backgroundColor: colors.card,
+            borderRadius: 30,
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+        },
+        notifTitle: {
+            color: colors.text,
+            fontSize: 20,
+            fontWeight: 'bold',
+            marginBottom: 5,
+        },
+        notifIllustration: {
+            width: 125,
+            height: 125,
+            borderRadius: 20,
+            marginRight: 10,
+        },
+        notifContentPreview: {
+            color: colors.text,
+        },
+        // Icon
+        iconBadge: {
+            backgroundColor: colors.notification,
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            width: 10,
+            height: 10,
+            borderRadius: 5,
+            zIndex: 1,
         },
         //! HomeView
 

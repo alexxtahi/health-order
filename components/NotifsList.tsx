@@ -3,13 +3,14 @@ import { FlatList, RefreshControl, ScrollView, Text, View } from 'react-native';
 import { drugList } from '../basics/constants';
 import { styles } from '../basics/Styles';
 import Drug from './Drug';
+import Notif from './Notif';
 
 // Timer
 const wait = (timeout: number | undefined) => {
     return new Promise(resolve => setTimeout(resolve, timeout));
 }
 // Composant
-export default function DrugsList() {
+export default function NotifsList() {
     // Propriétés
     var style: any = styles();
     const [refreshing, setRefreshing] = useState(false);
@@ -30,11 +31,11 @@ export default function DrugsList() {
                 }
                 renderItem={({ item, index }) => {
                     if (index !== drugList.length - 1) {
-                        return (<Drug extended={true} name={item.name} usage={item.usage} image={item.image} />);
+                        return (<Notif extended={true} name={item.name} usage={item.usage} image={item.image} />);
                     } else {
                         return (
                             <View>
-                                <Drug extended={true} name={item.name} usage={item.usage} image={item.image} />
+                                <Notif extended={true} name={item.name} usage={item.usage} image={item.image} />
                                 {/* Créer un espace à la fin de la liste */}
                                 <View style={{ height: 100 }} />
                             </View>

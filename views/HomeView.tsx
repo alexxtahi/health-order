@@ -7,9 +7,10 @@ import MapPreview from '../components/MapPreview';
 import DrugsGrid from '../components/DrugsGrid';
 import { useTheme } from '@react-navigation/native';
 
-export default function HomeView() {
+export default function HomeView({ navigation }: { navigation: any }) {
     // Propriétés
     var style: any = styles();
+    const hour: number = new Date().getHours();
     const { colors } = useTheme();
     // Rendu du composant
     return (
@@ -18,9 +19,13 @@ export default function HomeView() {
             {/* Header */}
             <View style={style.viewHeader} >
                 <View style={style.viewHeaderTop}>
-                    <Text style={style.viewTitle}>Bonjour !</Text>
-                    <TouchableOpacity>
-                        <Icons framework={"Feather"} name={"bell"} color={colors.primary} size={24} />
+                    <Text style={style.viewTitle}>
+                        {hour < 18 ? 'Bonjour !' : 'Bonsoir !'}
+                    </Text>
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate('Notifications');
+                    }}>
+                        <Icons framework={"Feather"} name={"bell"} color={colors.primary} size={24} badge={true} />
                     </TouchableOpacity>
                 </View>
                 <Text style={style.viewSubtitle}>Bienvenue sur l'application d'achat de médicaments en ligne.</Text>
