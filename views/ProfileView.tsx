@@ -17,6 +17,10 @@ export default function ProfileView() {
             </View>
             {/* Wallet Box */}
             <View style={style.walletBox}>
+                <View style={[style.walletCard, style.cardWithShadow]}>
+                </View >
+                <View style={[style.walletUnderCard, style.cardWithShadow]} />
+                <View style={[style.walletUnderCard2, style.cardWithShadow]} />
             </View >
             {/* Personal Infos Box */}
             <View style={style.personalInfosBox}>

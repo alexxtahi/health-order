@@ -283,12 +283,41 @@ export const styles = () => {
             fontWeight: 'bold',
             color: colors.primary,
         },
-        walletBox: { // Le portefeuille de cartes d'assurance
+        walletBox: {
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            marginBottom: 30,
+        },
+        cardWithShadow: {
+            shadowColor: "rgba(0,0,0,0.4)",
+            elevation: 5,
+        },
+        walletCard: { // Le portefeuille de cartes d'assurance
             width: '90%',
             height: 200,
             backgroundColor: colors.card,
             borderRadius: 30,
-            marginBottom: 25,
+            zIndex: 10,
+        },
+        walletUnderCard: { // Le portefeuille de cartes d'assurance
+            position: 'absolute',
+            top: 7.5,
+            width: '82.5%',
+            height: 200,
+            borderRadius: 30,
+            backgroundColor: colors.card,
+            zIndex: 5,
+        },
+        walletUnderCard2: { // Le portefeuille de cartes d'assurance
+            position: 'absolute',
+            top: 15,
+            width: '75%',
+            height: 200,
+            borderRadius: 30,
+            backgroundColor: colors.card,
+            zIndex: 1,
         },
         personalInfosBox: { // Le portefeuille de cartes d'assurance
             width: '90%',
