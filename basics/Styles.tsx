@@ -1,6 +1,5 @@
 import { useTheme } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
-import { APP_THEME } from './constants';
 // Sélection du thème à appliquer
 export const styles = () => {
     const { colors } = useTheme();
@@ -50,6 +49,11 @@ export const styles = () => {
             marginTop: 10,
             color: colors.primary,
         },
+        componentTitleBox: {
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            alignItems: 'center',
+        },
         componentTitle: {
             fontSize: 20,
             fontWeight: 'bold',
@@ -63,7 +67,12 @@ export const styles = () => {
             height: 150,
             backgroundColor: colors.card,
             borderRadius: 30,
+            overflow: 'hidden',
             marginBottom: 20,
+        },
+        errorMsg: {
+            color: "#888",
+            textAlign: 'center',
         },
         // Drug
         drugsGrid: {

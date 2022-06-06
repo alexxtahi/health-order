@@ -4,8 +4,10 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import React from 'react';
-import IconBadge from 'react-native-icon-badge';
 import { Text, View } from 'react-native';
 import { styles } from './Styles';
 
@@ -20,6 +22,9 @@ export default function Icons(props: any) {
         case 'AntDesign': icon = <AntDesign name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
         case 'Feather': icon = <Feather name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
         case 'Fontisto': icon = <Fontisto name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'Entypo': icon = <Entypo name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'MaterialIcons': icon = <MaterialIcons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
+        case 'MaterialCommunityIcons': icon = <MaterialCommunityIcons name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
         default: icon = <FontAwesome name={props.name} color={props.color} size={props.size} style={props.style ?? null} />; break;
     }
     // Rendu du composant

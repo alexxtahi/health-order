@@ -1,7 +1,10 @@
 // react-native.config.js
 module.exports = {
     dependencies: {
-        'local-rn-library': {
+        'react-native-maps': {
+            root: '/root/libraries',
+        },
+        'react-native-community/geolocation': {
             root: '/root/libraries',
         },
     },
