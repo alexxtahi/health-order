@@ -1,11 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
-import Icons from '../basics/Icons';
+import { Text, View } from 'react-native';
 import { styles } from '../basics/Styles';
-import DrugsGrid from '../components/DrugsGrid';
 import DrugsList from '../components/DrugsList';
-import MapPreview from '../components/MapPreview';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ActusView() {
     // Propriétés

@@ -1,16 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import Icons from '../basics/Icons';
+import { Text, View } from 'react-native';
 import { styles } from '../basics/Styles';
 import ThemeBox from '../components/ThemeBox';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SettingsView() {
     // Propriétés
     var style: any = styles();
     // Rendu du composant
     return (
-        <View style={style.container}>
+        <SafeAreaView style={style.container}>
             <StatusBar style="auto" />
             {/* Header */}
             <View style={style.viewHeader}>
@@ -24,7 +24,7 @@ export default function SettingsView() {
                 {/* Changement du thème */}
                 <ThemeBox />
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 

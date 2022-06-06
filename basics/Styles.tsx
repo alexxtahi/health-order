@@ -8,7 +8,7 @@ export const styles = () => {
         container: {
             flex: 1,
             alignItems: 'center',
-            paddingTop: 50,
+            paddingTop: 10,
             backgroundColor: colors.background,
             // justifyContent: 'center',
         },
@@ -73,6 +73,19 @@ export const styles = () => {
         errorMsg: {
             color: "#888",
             textAlign: 'center',
+        },
+        // FullMapView
+        fullMapBox: {
+            width: '100%',
+            height: '83%',
+            borderTopLeftRadius: 15,
+            borderTopRightRadius: 15,
+            overflow: 'hidden',
+            marginTop: 50,
+        },
+        fullMap: {
+            width: '100%',
+            height: '100%',
         },
         // Drug
         drugsGrid: {

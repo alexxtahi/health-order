@@ -7,7 +7,7 @@ import { useTheme } from '@react-navigation/native';
 import * as Location from 'expo-location';
 import Icons from '../basics/Icons';
 
-export default function MapPreview() {
+export default function MapPreview({ navigation }: { navigation: any }) {
     // Propriétés
     const { colors } = useTheme();
     var style: any = styles();
@@ -30,20 +30,16 @@ export default function MapPreview() {
         <View>
             <View style={style.componentTitleBox}>
                 <Text style={style.componentTitle}>Près de chez vous</Text>
-                {/* <CustomIconButton
-                    framework="MaterialIcons"
-                    iconName="location-pin"
-                    iconColor={colors.text}
-                    iconSize={20}
-                    onPress={() => {
-                        console.info("MapPreview.tsx: onPress");
-                    }} /> */}
             </View>
             <View style={style.mapPreview}>
                 <MapView
                     style={style.mapPreview}
+                    mapType="standard"
                     region={{ latitude: location.coords.latitude, longitude: location.coords.longitude, latitudeDelta: 0, longitudeDelta: 0.025 }}
                     showsUserLocation={true}
+                    onPress={() => {
+                        navigation.navigate('Carte', { location: location });
+                    }}
                 />
             </View>
         </View>

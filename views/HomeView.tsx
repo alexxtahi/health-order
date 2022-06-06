@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Icons from '../basics/Icons';
 import { styles } from '../basics/Styles';
 import MapPreview from '../components/MapPreview';
 import DrugsGrid from '../components/DrugsGrid';
 import { useTheme } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeView({ navigation }: { navigation: any }) {
     // Propriétés
@@ -33,7 +34,7 @@ export default function HomeView({ navigation }: { navigation: any }) {
             {/* Body */}
             <View style={style.viewBody} >
                 {/* Carte */}
-                < MapPreview />
+                < MapPreview navigation={navigation} />
                 {/* Médicaments */}
                 < DrugsGrid />
             </View >

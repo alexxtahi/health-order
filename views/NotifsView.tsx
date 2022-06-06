@@ -5,6 +5,7 @@ import { styles } from '../basics/Styles';
 import CustomIconButton from '../components/custom-basics/CustomIconButton';
 import { useTheme } from '@react-navigation/native';
 import NotifsList from '../components/NotifsList';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function NotifsView({ navigation }: { navigation: any }) {
     // Propriétés
@@ -12,7 +13,7 @@ export default function NotifsView({ navigation }: { navigation: any }) {
     var style: any = styles();
     // Rendu du composant
     return (
-        <View style={style.container}>
+        <SafeAreaView style={style.container}>
             <StatusBar style="auto" />
             {/* Header */}
             <View style={style.viewHeader}>
@@ -32,6 +33,6 @@ export default function NotifsView({ navigation }: { navigation: any }) {
                 {/* Liste de notifications */}
                 <NotifsList />
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
