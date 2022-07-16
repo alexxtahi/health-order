@@ -1,9 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icons from './Icons';
 import ActusView from '../views/ActusView';
-import HomeView from '../views/HomeView';
 import ProfileView from '../views/ProfileView';
-import SettingsView from '../views/SettingsView';
+import CartView from '../views/CartView';
 import { styles } from './Styles';
 import { useTheme } from '@react-navigation/native';
 import { HomeStack } from './StackNavigator';
@@ -30,11 +29,12 @@ export default function BottomTabs() {
                 tabBarBadge: '99+',
                 tabBarIcon: ({ size, color }) => (<Icons framework={"FontAwesome"} name={"newspaper-o"} color={color} size={size} />)
             }} />
+            <Tab.Screen name="Panier" component={CartView} options={{
+                tabBarBadge: '12',
+                tabBarIcon: ({ size, color }) => (<Icons framework={"Feather"} name={"shopping-cart"} color={color} size={size} />)
+            }} />
             <Tab.Screen name="Profil" component={ProfileView} options={{
                 tabBarIcon: ({ size, color }) => (<Icons framework={"Feather"} name={"user"} color={color} size={size} />)
-            }} />
-            <Tab.Screen name="Réglages" component={SettingsView} options={{
-                tabBarIcon: ({ size, color }) => (<Icons framework={"Ionicons"} name={"settings-outline"} color={color} size={size} />)
             }} />
         </Tab.Navigator>
     );

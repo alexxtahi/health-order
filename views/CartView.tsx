@@ -4,8 +4,9 @@ import { Text, View } from 'react-native';
 import { styles } from '../basics/Styles';
 import ThemeBox from '../components/ThemeBox';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import CartDrugsList from '../components/CartDrugsList';
 
-export default function SettingsView() {
+export default function CartView() {
     // Propriétés
     var style: any = styles();
     // Rendu du composant
@@ -15,14 +16,14 @@ export default function SettingsView() {
             {/* Header */}
             <View style={style.viewHeader}>
                 <View style={style.viewHeaderTop}>
-                    <Text style={style.viewTitle}>Réglages</Text>
+                    <Text style={style.viewTitle}>Panier</Text>
                 </View>
-                <Text style={style.viewSubtitle}>Ajustez les réglages en fonction de votre utilisation.</Text>
+                <Text style={style.viewSubtitle}>Retrouvez ici tous les médicaments que vous avez décidé de garder.</Text>
             </View>
             {/* Body */}
             <View style={style.viewBody}>
-                {/* Changement du thème */}
-                <ThemeBox />
+                {/* Liste de médicaments */}
+                < CartDrugsList />
             </View>
         </SafeAreaView>
     );

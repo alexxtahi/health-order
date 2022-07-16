@@ -1,5 +1,5 @@
 import { useTheme } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Text, View, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import PagerView from 'react-native-pager-view';
 import Icons from '../basics/Icons';
@@ -12,6 +12,7 @@ export default function Drug(props: any) {
     var style: any = styles();
     const { colors } = useTheme();
     const [currentPage, setCurrentPage] = useState(0);
+    let ref: PagerView | null;
     // Rendu du composant
     return props.extended === false ? (
         <TouchableOpacity>
@@ -35,6 +36,7 @@ export default function Drug(props: any) {
                 style={style.drugExtendedPagerView}
                 initialPage={currentPage}
                 pageMargin={15}
+                ref={(pager) => { ref = pager }}
                 onPageSelected={(page) => {
                     const pageIndex = page.nativeEvent.position;
                     setCurrentPage(pageIndex);
@@ -83,12 +85,24 @@ export default function Drug(props: any) {
                 </View >
             </PagerView>
             {/* Indicateurs */}
-            <View style={style.drugExtendedCardIndicators}>
+            <TouchableOpacity
+                style={style.drugExtendedCardIndicators}
+                // Changer de page en cliquant sur les indicateurs
+                onPress={() => {
+                    if (currentPage === 0) {
+                        setCurrentPage(1);
+                        ref?.setPage(1);
+                    }
+                    else if (currentPage === 1) {
+                        setCurrentPage(0);
+                        ref?.setPage(0);
+                    }
+                }}>
                 {/* Première Point */}
                 <View style={[style.indicatorDot, { backgroundColor: currentPage === 0 ? colors.notification : colors.card }]} />
                 {/* Deuxième Point */}
                 <View style={[style.indicatorDot, { backgroundColor: currentPage === 1 ? colors.notification : colors.card }]} />
-            </View>
+            </TouchableOpacity>
         </View>
     );
 }

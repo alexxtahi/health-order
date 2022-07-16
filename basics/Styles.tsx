@@ -92,20 +92,11 @@ export const styles = () => {
             width: '100%',
             height: 420,
             borderRadius: 30,
-            // marginBottom: 20,
-            // backgroundColor: 'red',
         },
         drugsGridColumn: {
             width: '100%',
-
-            // alignSelf: 'center',
-            // backgroundColor: 'green',
-            // display: 'flex',
-            // justifyContent: 'space-between',
-            // flexDirection: 'row',
         },
         drugsGridScrollView: {
-            // width: '100%',
             height: 420,
         },
         drugsGridScrollViewContent: {
@@ -115,16 +106,12 @@ export const styles = () => {
             alignContent: 'center',
             justifyContent: 'center',
             paddingBottom: 15,
-            // backgroundColor: 'blue',
         },
         drugsList: {
             width: '100%',
-            // marginBottom: 20,
-            // backgroundColor: 'red',
         },
         drugsListContent: {
             width: '100%',
-            // backgroundColor: 'red',
         },
         drugCard: {
             width: 160,
@@ -191,7 +178,6 @@ export const styles = () => {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'flex-end',
-            // backgroundColor: '#f00',
         },
         indicatorDot: {
             width: 10,
@@ -199,10 +185,92 @@ export const styles = () => {
             margin: 5,
             borderRadius: 10,
         },
+        // CartDrug
+        cartDrug: {
+            width: '100%',
+            height: 150,
+            padding: 10,
+            backgroundColor: colors.card,
+            borderRadius: 30,
+            flexDirection: 'row',
+        },
+        cartDrugImage: {
+            height: '100%',
+            aspectRatio: 1,
+            borderRadius: 25,
+            backgroundColor: colors.text,
+        },
+        cartDrugDetailsBox: {
+            maxWidth: '60%',
+            marginLeft: 10,
+        },
+        cartDrugTitle: {
+            color: colors.text,
+            fontSize: 16,
+            maxWidth: '100%',
+            marginBottom: 5,
+        },
+        cartDrugLabel: {
+            color: colors.text,
+            fontSize: 12,
+        },
+        cartDrugPrice: {
+            color: colors.notification,
+            fontSize: 22,
+            fontWeight: 'bold',
+        },
+        cartDrugRemoveBtn: {
+            width: 35,
+            aspectRatio: 1,
+            borderRadius: 35,
+            borderColor: colors.border,
+            borderWidth: 2.5,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        // Divider
+        horizontalDivider: {},
+        verticalDivider: {
+            width: 2,
+            height: '90%',
+            backgroundColor: colors.background,
+            marginHorizontal: 10,
+            borderRadius: 10,
+
+        },
+        // QuantityBox
+        quantityBox: {
+            flexDirection: 'row',
+            alignItems: 'center',
+        },
+        quantityBtn: {
+            width: 25,
+            aspectRatio: 1,
+            borderRadius: 25,
+            backgroundColor: colors.notification,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        quantityInput: {
+            width: 40,
+            height: 30,
+            backgroundColor: colors.background,
+            color: colors.text,
+            paddingHorizontal: 5,
+            paddingVertical: 2,
+            marginHorizontal: 5,
+            borderRadius: 8,
+            textAlign: 'center',
+        },
+        quantityAndDeleteRow: {
+            width: '100%',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+        },
         // Theme
         themeBox: {
             width: '100%',
-            // backgroundColor: '#f00',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -354,6 +422,6 @@ export const styles = () => {
             textDecorationLine: 'underline',
             color: colors.primary,
         },
-        //! SettingsView
+        //! CartView
     })
 };
