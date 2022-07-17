@@ -9,14 +9,16 @@ export default function QuantityBox(props: any) {
     var style: any = styles();
     const { colors } = useTheme();
     const [quantity, setQuantity] = useState(0);
+    const [maxQuantity, setMaxQuantity] = useState(99);
     // Rendu du composant
     return (
         <View style={style.quantityBox}>
             {/* Diminuer */}
             <TouchableOpacity
-                style={style.quantityBtn}
+                style={[style.quantityBtn, quantity <= 1 ? { opacity: 0.2 } : null]}
+                disabled={quantity <= 1 ? true : false}
                 onPress={() => {
-                    if (quantity > 0)
+                    if (quantity > 1)
                         setQuantity(quantity - 1);
                 }}>
                 <Icons framework="Ionicons" name="remove" color={colors.background} size={20} />
@@ -25,15 +27,19 @@ export default function QuantityBox(props: any) {
             <TextInput
                 style={style.quantityInput}
                 onChangeText={(newText: string) => {
-                    setQuantity(parseInt(newText));
+                    if (newText === "")
+                        setQuantity(1);
+                    else
+                        setQuantity(parseInt(newText));
+
                 }}
                 value={quantity.toString()}
-                placeholder="useless placeholder"
                 keyboardType="numeric"
             />
             {/* Augmenter */}
             <TouchableOpacity
-                style={style.quantityBtn}
+                style={[style.quantityBtn, quantity >= maxQuantity ? { opacity: 0.2 } : null]}
+                disabled={quantity >= maxQuantity ? true : false}
                 onPress={() => {
                     setQuantity(quantity + 1);
                 }}>

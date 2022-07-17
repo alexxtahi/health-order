@@ -25,7 +25,7 @@ export const drugList = [
     },
 ];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 20; i++) {
     drugList.push({
         name: 'Efferalgan 500mg',
         usage: 'Contre les maux de tête, douleurs et fortes migraines.',

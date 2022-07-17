@@ -98,7 +98,7 @@ export default function Drug(props: any) {
                         ref?.setPage(0);
                     }
                 }}>
-                {/* Première Point */}
+                {/* Premier Point */}
                 <View style={[style.indicatorDot, { backgroundColor: currentPage === 0 ? colors.notification : colors.card }]} />
                 {/* Deuxième Point */}
                 <View style={[style.indicatorDot, { backgroundColor: currentPage === 1 ? colors.notification : colors.card }]} />

@@ -52,7 +52,7 @@ export default function CartDrug(props: any) {
                         onPress={() => {
                             console.log('Removing ' + props.name + ' from cart...');
                         }}>
-                        <Icons framework="FontAwesome" name="trash-o" color={colors.border} size={20} />
+                        <Icons framework="Feather" name="trash-2" color={colors.border} size={20} />
                     </TouchableOpacity>
                 </View >
             </View >

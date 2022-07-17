@@ -23,18 +23,18 @@ export default function BottomTabs() {
             tabBarStyle: style.bottomTabs
         }}>
             <Tab.Screen name="Accueil" component={HomeStack} options={{
-                tabBarIcon: ({ size, color }) => (<Icons framework={"Octicons"} name={"home"} color={color} size={size} />)
+                tabBarIcon: ({ size, color }) => (<Icons framework="Octicons" name="home" color={color} size={size} />)
             }} />
             <Tab.Screen name="Actus" component={ActusView} options={{
                 tabBarBadge: '99+',
-                tabBarIcon: ({ size, color }) => (<Icons framework={"FontAwesome"} name={"newspaper-o"} color={color} size={size} />)
+                tabBarIcon: ({ size, color }) => (<Icons framework="FontAwesome" name="newspaper-o" color={color} size={size} />)
             }} />
             <Tab.Screen name="Panier" component={CartView} options={{
                 tabBarBadge: '12',
-                tabBarIcon: ({ size, color }) => (<Icons framework={"Feather"} name={"shopping-cart"} color={color} size={size} />)
+                tabBarIcon: ({ size, color }) => (<Icons framework="Feather" name="shopping-cart" color={color} size={size} />)
             }} />
             <Tab.Screen name="Profil" component={ProfileView} options={{
-                tabBarIcon: ({ size, color }) => (<Icons framework={"Feather"} name={"user"} color={color} size={size} />)
+                tabBarIcon: ({ size, color }) => (<Icons framework="Feather" name="user" color={color} size={size} />)
             }} />
         </Tab.Navigator>
     );
