@@ -1,5 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import CacheManager from './CacheManager';
+import { Dimensions } from 'react-native';
 
 export let APP_THEME = 'light';
 export const THEMES = ['dark', 'light'];
@@ -32,4 +31,10 @@ for (let i = 0; i < 20; i++) {
         image: require('../assets/img/drugs/1.jpg'),
         price: 780,
     });
+}
+
+// Avoir les dimensions de l'écran
+export const getScreenSize = () => {
+    const { width, height } = Dimensions.get('window');
+    return { width, height };
 }

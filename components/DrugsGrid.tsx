@@ -16,7 +16,7 @@ export default function DrugsGrid() {
     const drugCards: JSX.Element[] = [];
     drugList.slice(0, 9).forEach((drug, index) => {
         drugCards.push(
-            <Drug extended={false} name={drug.name} usage={drug.usage} image={drug.image} />
+            <Drug key={"DrugsGrid" + index} extended={false} name={drug.name} usage={drug.usage} image={drug.image} />
         );
         // Afficher un élément de plus pour voir tout
         if (index === 8) {
